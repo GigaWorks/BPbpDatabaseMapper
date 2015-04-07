@@ -22,6 +22,16 @@ public class TripPositions  implements java.io.Serializable {
 
     public TripPositions() {
     }
+    
+    public TripPositions(GtfsTrips gtfsTrips, double lat, double lon, double speed, double accuracy, int delay, String state) {
+       this.gtfsTrips = gtfsTrips;
+       this.lat = lat;
+       this.lon = lon;
+       this.speed = speed;
+       this.accuracy = accuracy;
+       this.delay = delay;
+       this.state = state;
+    }
 
     public TripPositions(GtfsTrips gtfsTrips, double lat, double lon, double speed, double accuracy, int delay, Date modifiedAt, String state) {
        this.gtfsTrips = gtfsTrips;

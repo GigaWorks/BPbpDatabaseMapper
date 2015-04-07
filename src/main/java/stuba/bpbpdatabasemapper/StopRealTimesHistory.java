@@ -20,6 +20,14 @@ public class StopRealTimesHistory  implements java.io.Serializable {
 
     public StopRealTimesHistory() {
     }
+    
+    public StopRealTimesHistory(GtfsStops gtfsStops, GtfsStopTimes gtfsStopTimes, GtfsTrips gtfsTrips, Integer realArrivalTime, Integer realDepartureTime) {
+       this.gtfsStops = gtfsStops;
+       this.gtfsStopTimes = gtfsStopTimes;
+       this.gtfsTrips = gtfsTrips;
+       this.realArrivalTime = realArrivalTime;
+       this.realDepartureTime = realDepartureTime;
+    }
 
     public StopRealTimesHistory(GtfsStops gtfsStops, GtfsStopTimes gtfsStopTimes, GtfsTrips gtfsTrips, Integer realArrivalTime, Integer realDepartureTime, Date createdAt) {
        this.gtfsStops = gtfsStops;

@@ -24,7 +24,7 @@
             <column name="filePath" not-null="true" />
         </property>
         <property name="createdAt" type="timestamp">
-            <column name="created_at" length="19" not-null="true" />
+            <column name="created_at" length="19" />
         </property>
         <set name="poisInRouteses" table="pois_in_routes" inverse="true" lazy="true" fetch="select">
             <key>

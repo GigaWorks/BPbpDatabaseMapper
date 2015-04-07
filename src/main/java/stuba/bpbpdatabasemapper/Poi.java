@@ -23,7 +23,14 @@ public class Poi  implements java.io.Serializable {
 
     public Poi() {
     }
-
+    
+    public Poi(double lat, double lon, double radius, String title, String filePath) {
+        this.lat = lat;
+        this.lon = lon;
+        this.radius = radius;
+        this.title = title;
+        this.filePath = filePath;
+    }
 	
     public Poi(double lat, double lon, double radius, String title, String filePath, Date createdAt) {
         this.lat = lat;
@@ -33,6 +40,16 @@ public class Poi  implements java.io.Serializable {
         this.filePath = filePath;
         this.createdAt = createdAt;
     }
+    
+    public Poi(double lat, double lon, double radius, String title, String filePath, Set poisInRouteses) {
+       this.lat = lat;
+       this.lon = lon;
+       this.radius = radius;
+       this.title = title;
+       this.filePath = filePath;
+       this.poisInRouteses = poisInRouteses;
+    }
+    
     public Poi(double lat, double lon, double radius, String title, String filePath, Date createdAt, Set poisInRouteses) {
        this.lat = lat;
        this.lon = lon;
