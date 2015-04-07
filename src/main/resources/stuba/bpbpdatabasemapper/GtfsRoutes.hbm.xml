@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2015 10:21:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbpdatabasemapper.GtfsRoutes" table="gtfs_routes" catalog="`BA-DPB`">
+        <composite-id name="id" class="stuba.bpbpdatabasemapper.GtfsRoutesId">
+            <key-property name="agencyId" type="string">
+                <column name="agencyId" length="50" />
+            </key-property>
+            <key-property name="id" type="string">
+                <column name="id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="gtfsAgencies" class="stuba.bpbpdatabasemapper.GtfsAgencies" fetch="select">
+            <column name="agency" length="50" not-null="true" />
+        </many-to-one>
+        <property name="shortName" type="string">
+            <column name="shortName" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+        <property name="textColor" type="string">
+            <column name="textColor" />
+        </property>
+        <set name="poisInRouteses" table="pois_in_routes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="route_agencyId" length="50" />
+                <column name="route_id" not-null="true" />
+            </key>
+            <one-to-many class="stuba.bpbpdatabasemapper.PoisInRoutes" />
+        </set>
+        <set name="gtfsTripses" table="gtfs_trips" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="route_agencyId" length="50" />
+                <column name="route_id" />
+            </key>
+            <one-to-many class="stuba.bpbpdatabasemapper.GtfsTrips" />
+        </set>
+    </class>
+</hibernate-mapping>

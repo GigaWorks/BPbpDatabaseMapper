@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2015 10:21:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbpdatabasemapper.GtfsTrips" table="gtfs_trips" catalog="`BA-DPB`">
+        <composite-id name="id" class="stuba.bpbpdatabasemapper.GtfsTripsId">
+            <key-property name="agencyId" type="string">
+                <column name="agencyId" length="50" />
+            </key-property>
+            <key-property name="id" type="string">
+                <column name="id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="gtfsRoutes" class="stuba.bpbpdatabasemapper.GtfsRoutes" fetch="select">
+            <column name="route_agencyId" length="50" />
+            <column name="route_id" />
+        </many-to-one>
+        <property name="serviceIdAgencyId" type="string">
+            <column name="serviceId_agencyId" length="50" />
+        </property>
+        <property name="serviceIdId" type="string">
+            <column name="serviceId_id" />
+        </property>
+        <property name="tripHeadsign" type="string">
+            <column name="tripHeadsign" />
+        </property>
+        <property name="directionId" type="string">
+            <column name="directionId" />
+        </property>
+        <set name="stopRealTimesHistories" table="stop_real_times_history" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="trip_agencyId" length="50" />
+                <column name="trip_id" />
+            </key>
+            <one-to-many class="stuba.bpbpdatabasemapper.StopRealTimesHistory" />
+        </set>
+        <set name="gtfsStopTimeses" table="gtfs_stop_times" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="trip_agencyId" length="50" />
+                <column name="trip_id" />
+            </key>
+            <one-to-many class="stuba.bpbpdatabasemapper.GtfsStopTimes" />
+        </set>
+        <set name="tripPositionses" table="trip_positions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="gtfs_trip_agencyId" length="50" not-null="true" />
+                <column name="gtfs_trip_id" not-null="true" />
+            </key>
+            <one-to-many class="stuba.bpbpdatabasemapper.TripPositions" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="BA-DPB"/>
+  <table-filter match-name="trip_positions"/>
+  <table-filter match-name="gtfs_calendars"/>
+  <table-filter match-name="stop_real_times_history"/>
+  <table-filter match-name="gtfs_agencies"/>
+  <table-filter match-name="gtfs_calendar_dates"/>
+  <table-filter match-name="gtfs_stop_times"/>
+  <table-filter match-name="gtfs_trips"/>
+  <table-filter match-name="gtfs_stops"/>
+  <table-filter match-name="gtfs_routes"/>
+  <table-filter match-name="poi"/>
+  <table-filter match-name="pois_in_routes"/>
+</hibernate-reverse-engineering>

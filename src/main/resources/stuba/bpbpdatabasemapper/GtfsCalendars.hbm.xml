@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2015 10:21:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbpdatabasemapper.GtfsCalendars" table="gtfs_calendars" catalog="`BA-DPB`">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="monday" type="java.lang.Integer">
+            <column name="monday" />
+        </property>
+        <property name="tuesday" type="java.lang.Integer">
+            <column name="tuesday" />
+        </property>
+        <property name="wednesday" type="java.lang.Integer">
+            <column name="wednesday" />
+        </property>
+        <property name="thursday" type="java.lang.Integer">
+            <column name="thursday" />
+        </property>
+        <property name="friday" type="java.lang.Integer">
+            <column name="friday" />
+        </property>
+        <property name="saturday" type="java.lang.Integer">
+            <column name="saturday" />
+        </property>
+        <property name="sunday" type="java.lang.Integer">
+            <column name="sunday" />
+        </property>
+        <property name="startDate" type="string">
+            <column name="startDate" length="8" />
+        </property>
+        <property name="endDate" type="string">
+            <column name="endDate" length="8" />
+        </property>
+        <property name="serviceIdAgencyId" type="string">
+            <column name="serviceId_agencyId" length="50" />
+        </property>
+        <property name="serviceIdId" type="string">
+            <column name="serviceId_id" />
+        </property>
+    </class>
+</hibernate-mapping>

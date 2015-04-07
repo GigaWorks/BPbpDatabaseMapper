@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2015 10:21:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbpdatabasemapper.TripPositions" table="trip_positions" catalog="`BA-DPB`">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="gtfsTrips" class="stuba.bpbpdatabasemapper.GtfsTrips" fetch="select">
+            <column name="gtfs_trip_agencyId" length="50" not-null="true" />
+            <column name="gtfs_trip_id" not-null="true" />
+        </many-to-one>
+        <property name="lat" type="double">
+            <column name="lat" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="lon" type="double">
+            <column name="lon" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="speed" type="double">
+            <column name="speed" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="accuracy" type="double">
+            <column name="accuracy" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="delay" type="int">
+            <column name="delay" not-null="true" />
+        </property>
+        <property name="modifiedAt" type="timestamp">
+            <column name="modified_at" length="19" not-null="true" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

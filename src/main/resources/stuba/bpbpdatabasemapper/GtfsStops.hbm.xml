@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2015 10:21:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbpdatabasemapper.GtfsStops" table="gtfs_stops" catalog="`BA-DPB`">
+        <composite-id name="id" class="stuba.bpbpdatabasemapper.GtfsStopsId">
+            <key-property name="agencyId" type="string">
+                <column name="agencyId" length="50" />
+            </key-property>
+            <key-property name="id" type="string">
+                <column name="id" />
+            </key-property>
+        </composite-id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="lat" type="java.lang.Double">
+            <column name="lat" precision="22" scale="0" />
+        </property>
+        <property name="lon" type="java.lang.Double">
+            <column name="lon" precision="22" scale="0" />
+        </property>
+        <property name="zoneId" type="string">
+            <column name="zoneId" />
+        </property>
+        <set name="stopRealTimesHistories" table="stop_real_times_history" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="stop_agencyId" length="50" />
+                <column name="stop_id" />
+            </key>
+            <one-to-many class="stuba.bpbpdatabasemapper.StopRealTimesHistory" />
+        </set>
+        <set name="gtfsStopTimeses" table="gtfs_stop_times" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="stop_agencyId" length="50" />
+                <column name="stop_id" />
+            </key>
+            <one-to-many class="stuba.bpbpdatabasemapper.GtfsStopTimes" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2015 10:21:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbpdatabasemapper.GtfsAgencies" table="gtfs_agencies" catalog="`BA-DPB`">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="lang" type="string">
+            <column name="lang" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" />
+        </property>
+        <property name="timezone" type="string">
+            <column name="timezone" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" />
+        </property>
+        <set name="gtfsRouteses" table="gtfs_routes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="agency" length="50" not-null="true" />
+            </key>
+            <one-to-many class="stuba.bpbpdatabasemapper.GtfsRoutes" />
+        </set>
+    </class>
+</hibernate-mapping>

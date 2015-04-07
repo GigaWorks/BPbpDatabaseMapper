@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2015 10:21:50 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="stuba.bpbpdatabasemapper.GtfsCalendarDates" table="gtfs_calendar_dates" catalog="`BA-DPB`">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="date" type="string">
+            <column name="date" length="8" />
+        </property>
+        <property name="exceptionType" type="java.lang.Integer">
+            <column name="exceptionType" />
+        </property>
+        <property name="serviceIdAgencyId" type="string">
+            <column name="serviceId_agencyId" length="50" />
+        </property>
+        <property name="serviceIdId" type="string">
+            <column name="serviceId_id" />
+        </property>
+    </class>
+</hibernate-mapping>
