@@ -15,7 +15,7 @@ public class TripPositions  implements java.io.Serializable {
      private double lat;
      private double lon;
      private double speed;
-     private double accuracy;
+     private int nextStopNumber;
      private int delay;
      private Date modifiedAt;
      private String state;
@@ -23,22 +23,22 @@ public class TripPositions  implements java.io.Serializable {
     public TripPositions() {
     }
     
-    public TripPositions(GtfsTrips gtfsTrips, double lat, double lon, double speed, double accuracy, int delay, String state) {
+    public TripPositions(GtfsTrips gtfsTrips, double lat, double lon, double speed, int accuracy, int delay, String state) {
        this.gtfsTrips = gtfsTrips;
        this.lat = lat;
        this.lon = lon;
        this.speed = speed;
-       this.accuracy = accuracy;
+       this.nextStopNumber = accuracy;
        this.delay = delay;
        this.state = state;
     }
 
-    public TripPositions(GtfsTrips gtfsTrips, double lat, double lon, double speed, double accuracy, int delay, Date modifiedAt, String state) {
+    public TripPositions(GtfsTrips gtfsTrips, double lat, double lon, double speed, int accuracy, int delay, Date modifiedAt, String state) {
        this.gtfsTrips = gtfsTrips;
        this.lat = lat;
        this.lon = lon;
        this.speed = speed;
-       this.accuracy = accuracy;
+       this.nextStopNumber = accuracy;
        this.delay = delay;
        this.modifiedAt = modifiedAt;
        this.state = state;
@@ -79,12 +79,12 @@ public class TripPositions  implements java.io.Serializable {
     public void setSpeed(double speed) {
         this.speed = speed;
     }
-    public double getAccuracy() {
-        return this.accuracy;
+    public int getNextStopNumber() {
+        return this.nextStopNumber;
     }
     
-    public void setAccuracy(double accuracy) {
-        this.accuracy = accuracy;
+    public void setNextStopNumber(int nextStopNumber) {
+        this.nextStopNumber = nextStopNumber;
     }
     public int getDelay() {
         return this.delay;
