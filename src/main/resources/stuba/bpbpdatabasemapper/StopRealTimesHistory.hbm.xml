@@ -8,16 +8,8 @@
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="gtfsStops" class="stuba.bpbpdatabasemapper.GtfsStops" fetch="select">
-            <column name="stop_agencyId" length="50" />
-            <column name="stop_id" />
-        </many-to-one>
         <many-to-one name="gtfsStopTimes" class="stuba.bpbpdatabasemapper.GtfsStopTimes" fetch="select">
             <column name="gtfs_stop_time_id" />
-        </many-to-one>
-        <many-to-one name="gtfsTrips" class="stuba.bpbpdatabasemapper.GtfsTrips" fetch="select">
-            <column name="trip_agencyId" length="50" />
-            <column name="trip_id" />
         </many-to-one>
         <property name="realArrivalTime" type="java.lang.Integer">
             <column name="real_arrival_time" />

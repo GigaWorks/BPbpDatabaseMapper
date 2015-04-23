@@ -28,13 +28,6 @@
         <property name="directionId" type="string">
             <column name="directionId" />
         </property>
-        <set name="stopRealTimesHistories" table="stop_real_times_history" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="trip_agencyId" length="50" />
-                <column name="trip_id" />
-            </key>
-            <one-to-many class="stuba.bpbpdatabasemapper.StopRealTimesHistory" />
-        </set>
         <set name="gtfsStopTimeses" table="gtfs_stop_times" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="trip_agencyId" length="50" />

@@ -24,13 +24,7 @@
         <property name="zoneId" type="string">
             <column name="zoneId" />
         </property>
-        <set name="stopRealTimesHistories" table="stop_real_times_history" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="stop_agencyId" length="50" />
-                <column name="stop_id" />
-            </key>
-            <one-to-many class="stuba.bpbpdatabasemapper.StopRealTimesHistory" />
-        </set>
+        
         <set name="gtfsStopTimeses" table="gtfs_stop_times" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="stop_agencyId" length="50" />

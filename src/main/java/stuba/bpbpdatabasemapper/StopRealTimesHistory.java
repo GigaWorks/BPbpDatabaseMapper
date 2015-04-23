@@ -11,9 +11,7 @@ public class StopRealTimesHistory  implements java.io.Serializable {
 
 
      private Long id;
-     private GtfsStops gtfsStops;
      private GtfsStopTimes gtfsStopTimes;
-     private GtfsTrips gtfsTrips;
      private Integer realArrivalTime;
      private Integer realDepartureTime;
      private Date createdAt;
@@ -21,18 +19,14 @@ public class StopRealTimesHistory  implements java.io.Serializable {
     public StopRealTimesHistory() {
     }
     
-    public StopRealTimesHistory(GtfsStops gtfsStops, GtfsStopTimes gtfsStopTimes, GtfsTrips gtfsTrips, Integer realArrivalTime, Integer realDepartureTime) {
-       this.gtfsStops = gtfsStops;
+    public StopRealTimesHistory(GtfsStopTimes gtfsStopTimes,Integer realArrivalTime, Integer realDepartureTime) {
        this.gtfsStopTimes = gtfsStopTimes;
-       this.gtfsTrips = gtfsTrips;
        this.realArrivalTime = realArrivalTime;
        this.realDepartureTime = realDepartureTime;
     }
 
-    public StopRealTimesHistory(GtfsStops gtfsStops, GtfsStopTimes gtfsStopTimes, GtfsTrips gtfsTrips, Integer realArrivalTime, Integer realDepartureTime, Date createdAt) {
-       this.gtfsStops = gtfsStops;
+    public StopRealTimesHistory(GtfsStopTimes gtfsStopTimes,Integer realArrivalTime, Integer realDepartureTime, Date createdAt) {
        this.gtfsStopTimes = gtfsStopTimes;
-       this.gtfsTrips = gtfsTrips;
        this.realArrivalTime = realArrivalTime;
        this.realDepartureTime = realDepartureTime;
        this.createdAt = createdAt;
@@ -45,26 +39,12 @@ public class StopRealTimesHistory  implements java.io.Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    public GtfsStops getGtfsStops() {
-        return this.gtfsStops;
-    }
-    
-    public void setGtfsStops(GtfsStops gtfsStops) {
-        this.gtfsStops = gtfsStops;
-    }
     public GtfsStopTimes getGtfsStopTimes() {
         return this.gtfsStopTimes;
     }
     
     public void setGtfsStopTimes(GtfsStopTimes gtfsStopTimes) {
         this.gtfsStopTimes = gtfsStopTimes;
-    }
-    public GtfsTrips getGtfsTrips() {
-        return this.gtfsTrips;
-    }
-    
-    public void setGtfsTrips(GtfsTrips gtfsTrips) {
-        this.gtfsTrips = gtfsTrips;
     }
     public Integer getRealArrivalTime() {
         return this.realArrivalTime;
@@ -87,10 +67,6 @@ public class StopRealTimesHistory  implements java.io.Serializable {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
-
-
-
-
 }
 
 
